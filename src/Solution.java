@@ -22,11 +22,11 @@ public class Solution {
         this.fitness = fitness;
     }
 
-    public int[] getRegles() {
+    public int[] getRules() {
         return regles;
     }
 
-    public void setRegles(int[] regles) {
+    public void setRules(int[] regles) {
         this.regles = regles;
     }
 

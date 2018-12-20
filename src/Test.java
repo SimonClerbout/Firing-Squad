@@ -67,11 +67,15 @@ public class Test {
 
 		System.out.println("The End.");
 
-		//déclarer mon EA ICI
+		//déclarer mes EA ICI
 
 		HillClimber hc = new HillClimber();
 
 		hc.hillClimberFirst(9000000, automate);
+
+		HillClimber ils = new HillClimber();
+
+		ils.ILS(2000000, automate);
 
 	}
 
