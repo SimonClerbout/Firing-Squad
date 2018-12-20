@@ -77,6 +77,10 @@ public class Test {
 
 		ils.ILS(2000000, automate);
 
+		HillClimber rs = new HillClimber();
+
+		rs.randomSearch(2000000, automate);
+
 	}
 
 	public static void printToFile(int fitness, int [] rules, PrintWriter ecrivain) {

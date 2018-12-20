@@ -113,5 +113,42 @@ public class HillClimber {
     }
 
 
+    public Solution randomSearch(int maxOpti, Automata automata){
+
+        Initialization initialize = new Initialization();
+        int [] rules = new int[_NBITER];
+        initialize.init(rules);
+
+        int fitness = automata.f(rules, _SIZEMAX);
+
+        Solution firstResult = new Solution(rules);
+
+        int[] rulesTest = new int[_NBITER];
+
+        int repeat = 0;
+
+        while(repeat <= maxOpti){
+
+            Random rand = new Random();
+            for(int tmpi = 0; tmpi < 1; tmpi++){
+
+                rulesTest[rand.nextInt(_NBITER)] = rand.nextInt(4);
+                rulesTest = firstResult.getRules();
+
+            }
+
+            int testFit = automata.f(rulesTest, _SIZEMAX);
+
+            firstResult.setRules(rulesTest);
+            firstResult.setFitness(testFit);
+
+            repeat++;
+
+        }
+
+        System.out.println("Fitness Random Search : " + fitness);
+        return firstResult;
+
+    }
 
 }
